@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEPM Portfolio • RASP</title>
+    <meta name="description" content="Software Engineering Project Management portfolio for the Runtime Application Self-Protection (RASP) project.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <nav id="navbar">
+        <div class="nav-brand">RASP SEPM</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#team">Team</a>
+            <a href="#introduction">Intro</a>
+            <a href="#process">Process</a>
+            <a href="#requirements">Requirements</a>
+            <a href="#design">Design</a>
+            <a href="#construction">Construction</a>
+            <a href="#testing">Testing</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main>
+        <section id="home" class="hero fade-in">
+            <div class="hero-content">
+                <h1 class="gradient-text">SEPM Portfolio</h1>
+                <h2>Runtime Application Self-Protection (RASP)</h2>
+                <p>This portfolio illustrates the application of SEPM concepts to the RASP project. It details the methodologies, architectural design, testing, and security hardening processes that ensure robust, real-time threat mitigation.</p>
+                <a href="#team" class="cta-button">Explore the Project</a>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card mockup-card">
+                    <div class="mockup-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="mockup-body">
+                        <code>[RASP Engine] Real-time monitoring active...</code>
+                        <code>[Security] Rate limit enforced: 10 req/s</code>
+                        <code>[Alert] Blocked automated fuzzing tool (ffuf)</code>
+                        <code class="text-success">[Status] System Secure.</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Meet the Team</h2>
+                <p>The minds behind the RASP implementation.</p>
+            </div>
+            <div class="team-grid">
+                <div class="glass-card team-card">
+                    <div class="avatar">BK</div>
+                    <h3>Bharath Kumar</h3>
+                    <p class="role">RA2312703010020</p>
+                </div>
+                <div class="glass-card team-card">
+                    <div class="avatar">KG</div>
+                    <h3>Keshav Gehlot</h3>
+                    <p class="role">RA2312703010034</p>
+                </div>
+                <div class="glass-card team-card">
+                    <div class="avatar">DB</div>
+                    <h3>Daksh Bhagwani</h3>
+                    <p class="role">RA2312703010017</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="introduction" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Introduction to Software Engineering</h2>
+                <p>Structuring defense in depth.</p>
+            </div>
+            <div class="content-grid">
+                <div class="glass-card content-card">
+                    <ul>
+                        <li><strong>Evolving Threats:</strong> Security threats change constantly, so engineering is about preparing for new attack vectors.</li>
+                        <li><strong>Layered Architecture:</strong> Designed RASP with a clear separation between the core logic and the presentation layer.</li>
+                        <li><strong>Modular Design:</strong> Separated monitoring, logging, and mitigation workflows so the system can scale without muddying components.</li>
+                        <li><strong>Forensic Cleanliness:</strong> Ensured the event database records actionable telemetry without UI clutter.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Process Models & Management</h2>
+                <p>Choosing the right path for delivery.</p>
+            </div>
+            <div class="content-grid">
+                <div class="glass-card content-card">
+                    <ul>
+                        <li><strong>Agile Methodology:</strong> Allowed the team to respond to security testing feedback rapidly, adapting rules as new vulnerabilities were discovered.</li>
+                        <li><strong>Iterative Hardening:</strong> Started with basic request logging, then incrementally added complex features like rate limiting (10 req/sec) and payload inspection.</li>
+                        <li><strong>Sprint Reviews:</strong> Used short cycles to fix rate-limit violations and ensure a `403 Forbidden` response for robust mitigation.</li>
+                        <li><strong>Continuous Improvement:</strong> Adopted frequent security audits to keep the RASP dashboard focused and forensic.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="requirements" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Requirements Engineering</h2>
+                <p>Turning security needs into actionable tasks.</p>
+            </div>
+            <div class="content-grid">
+                <div class="glass-card content-card">
+                    <h3>Functional Requirements</h3>
+                    <ul>
+                        <li>Real-time inspection of HTTP requests for XSS, SQLi, and SSRF.</li>
+                        <li>Enforce a global site-wide rate limit to block fuzzers like `dirb`.</li>
+                        <li>Provide a forensic dashboard for SOC analysts to export logs.</li>
+                    </ul>
+                    <h3 class="mt-4">Non-Functional Requirements</h3>
+                    <ul>
+                        <li><strong>Performance:</strong> Minimal latency overhead (<10ms) per request.</li>
+                        <li><strong>Security:</strong> Prevent information disclosure on blocks (return generic 403).</li>
+                        <li><strong>Maintainability:</strong> Clean, decoupled Python modules for easy rule updates.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="design" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Architecture & UI/UX Design</h2>
+                <p>Mapping the structure and experience.</p>
+            </div>
+            <div class="content-grid two-cols">
+                <div class="glass-card content-card">
+                    <h3>Software Architecture</h3>
+                    <p>Organized the system so each part has a clear, singular responsibility:</p>
+                    <ul>
+                        <li><strong>Monitoring:</strong> Captures raw telemetry efficiently.</li>
+                        <li><strong>Analysis:</strong> Flags anomalies and potential threats dynamically.</li>
+                        <li><strong>Extraction:</strong> Parses payloads for deeper inspection.</li>
+                        <li><strong>Dashboard:</strong> Streamlit-based UI for exporting and viewing forensic data.</li>
+                    </ul>
+                </div>
+                <div class="glass-card content-card">
+                    <h3>UI/UX Design</h3>
+                    <p>Designed for SOC analysts who need speed and clarity:</p>
+                    <ul>
+                        <li>Removed all unnecessary visual clutter ("Attack Analysis" graphics).</li>
+                        <li>Implemented a strictly forensic, high-performance monitoring interface.</li>
+                        <li>Dark mode aesthetics to reduce eye strain during prolonged monitoring sessions.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="construction" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Software Construction</h2>
+                <p>Writing code with discipline.</p>
+            </div>
+            <div class="content-grid">
+                <div class="glass-card content-card">
+                    <ul>
+                        <li><strong>Clean Code:</strong> Organized Python code into clear, independent modules.</li>
+                        <li><strong>Configuration Management:</strong> Centrally managed rate limits, thresholds, and regex patterns.</li>
+                        <li><strong>Refactoring:</strong> Streamlined the dashboard by removing redundant UI elements, focusing solely on actionable intelligence.</li>
+                        <li><strong>Version Control:</strong> Maintained strict commit hygiene while pushing critical security updates to the GitHub repository.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="testing" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Testing & Risk Management</h2>
+                <p>Validating defenses and controlling uncertainty.</p>
+            </div>
+            <div class="content-grid two-cols">
+                <div class="glass-card content-card">
+                    <h3>Testing Strategies</h3>
+                    <ul>
+                        <li><strong>Adversarial Testing:</strong> Simulated attacks using tools like `ffuf` and `dirb` to verify rate limiting.</li>
+                        <li><strong>Payload Validation:</strong> Tested rule sets against known malicious inputs (Path Traversal, SQLi) to ensure accurate blocking.</li>
+                        <li><strong>Integration Testing:</strong> Verified that blocked requests properly registered in the database with accurate source/target IP tracking.</li>
+                    </ul>
+                </div>
+                <div class="glass-card content-card">
+                    <h3>Risk Management (RMMM)</h3>
+                    <ul>
+                        <li><strong>Risk:</strong> High false-positive rate blocking legitimate traffic.</li>
+                        <li><strong>Mitigation:</strong> Fine-tuned the analysis engine with baseline profiles.</li>
+                        <li><strong>Risk:</strong> Information disclosure via verbose error messages.</li>
+                        <li><strong>Mitigation:</strong> Hardcoded standard `403 Forbidden` responses for all security violations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="conclusion" class="fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text">Conclusion & Future Scope</h2>
+                <p>Looking ahead.</p>
+            </div>
+            <div class="content-grid">
+                <div class="glass-card content-card">
+                    <p>Working on the RASP project demonstrated that Software Engineering Project Management is crucial for building reliable security tools. Balancing performance with robust defense requires careful planning, iterative testing, and a disciplined approach to architecture.</p>
+                    <h3 class="mt-4">Future Scope (Maintenance)</h3>
+                    <ul>
+                        <li><strong>Adaptive Maintenance:</strong> Updating rule sets to counter zero-day exploits.</li>
+                        <li><strong>Perfective Maintenance:</strong> Implementing distributed rate-limiting across multiple instances via Redis.</li>
+                        <li><strong>Preventive Maintenance:</strong> Automating the CI/CD pipeline for regular dependency vulnerability scanning.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RASP SEPM Portfolio. Built with focus on Software Engineering Principles.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
